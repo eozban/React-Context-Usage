@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from 'react';
+import { PriceContext } from './context/PriceContext';
+import Toogle from './component/Toogle';
+import "./App.css"
 
 function App() {
+  const { pricing, enabled, setEnabled } = useContext(PriceContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={enabled ? "box yearly" : "box monthly"}>
+      <Toogle title="Yıllık" />
+      {/*enabled ? <h1>TRUE</h1> : <h1>FALSE</h1>*/}
+      {enabled
+        ?
+        <>
+          <p>Basic: {pricing.full.basic}</p>
+          <p>Pro: {pricing.full.pro}</p>
+          <p>Master: {pricing.full.master}</p>
+        </>
+        :
+        <>
+          <p>Basic: {pricing.monthly.basic}</p>
+          <p>Pro: {pricing.monthly.pro}</p>
+          <p>Master: {pricing.monthly.master}</p>
+        </>
+      }
     </div>
   );
 }
