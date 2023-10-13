@@ -17,9 +17,9 @@
 .toogle {
     background-color: black;
     color: white;
-    border: 1px solid green;
+    border: 1px solid silver;
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 20px;
 }
 
 .toogle span {
@@ -29,5 +29,5 @@
 }
 
 .toogle span.active {
-    border: 1px solid red;
+    border: 3px solid red;
 }
