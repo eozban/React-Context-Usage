@@ -13,3 +13,21 @@
 .monthly {
     background-color: lightblue;
 }
+
+.toogle {
+    background-color: black;
+    color: white;
+    border: 1px solid green;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.toogle span {
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.toogle span.active {
+    border: 1px solid red;
+}
